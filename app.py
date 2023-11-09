@@ -23,17 +23,17 @@ def default_dialog():
 
 
 @app.route('/readinessProbe')
-def readinessProbe():
+def readiness_probe():
 	return "I am ready!"
 
 
 @app.route('/livenessProbe')
-def livenessProbe():
+def liveness_probe():
 	return "I am live!"
 
 
 @app.route('/startupProbe')
-def startupProbe():
+def startup_probe():
 	return "I am starting!"
 
 
