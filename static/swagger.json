@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "feature.proto",
-    "version": "version not set"
+    "title": "Geschäftsgegenstand",
+    "version": "1.0.0"
   },
   "schemes": [
     "http",
@@ -15,9 +15,9 @@
     "application/json"
   ],
   "paths": {
-    "/ops/features": {
+    "/wz08": {
       "get": {
-        "summary": "GET /ops/features",
+        "summary": "GET /wz08",
         "operationId": "ListFeatures",
         "responses": {
           "200": {
@@ -32,6 +32,57 @@
         ]
       }
     },
+    "/wz08/{wz08-code}": {
+      "get": {
+        "summary": "GET /wz08/:wz08-code",
+        "operationId": "ListFeatures",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/featureListFeaturesResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "wz08-code",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protobufStruct"
+            }
+          }
+        ],
+        "tags": [
+          "Generic"
+        ]
+      }
+    },
+        "/ops/features": {
+            "get": {
+                "summary": "GET /ops/features",
+                "operationId": "ListFeatures",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/featureListFeaturesResponse"
+                        }
+                    }
+                },
+                "tags": [
+                    "Generic"
+                ]
+            }
+        },
     "/ops/features/{uuid}": {
       "put": {
         "summary": "PUT /ops/features/:uuid",
